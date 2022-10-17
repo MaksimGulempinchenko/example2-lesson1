@@ -27,7 +27,41 @@ position++;
 
 }
 }
+
+int indexOf(int[]collection,int find) 
+{
+
+int count = collection.Length;
+int index = 0;
+int position = -1;  // возвращает -1 если элемент не найден
+
+while(index < count)
+{
+
+    if(collection[index] == find)
+    {
+     
+       position = index;
+        break;            // останавливает после первого нахождения позиции    
+    }
+
+    index++;
+
+}
+
+return position;
+
+}
+
+
+
+
 int [] array = new int[10]; // создали массив с 10-ю позициями
 
 FillArray(array);
 PrintArray(array);
+array[2] = 4;
+array[5] = 4;
+Console.WriteLine();
+int pos = indexOf(array,45);
+Console.WriteLine(pos);
